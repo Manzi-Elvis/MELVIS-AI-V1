@@ -1,6 +1,7 @@
 import os
 import webbrowser
 import datetime
+import subprocess
 from melvis.memory import remember, load_memory
 
 def handle_command(command):
@@ -36,5 +37,32 @@ def handle_command(command):
         if not memory:
             return "I do not remember anything yet."
         return str(memory)
+
+    opened = []
+
+    if "chrome" in command:
+        subprocess.Popen(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
+        opened.append("Chrome")
+
+    if "github" in command:
+        webbrowser.open("https://github.com")
+        opened.append("GitHub")
+
+    if "youtube" in command:
+        webbrowser.open("https://youtube.com")
+        opened.append("YouTube")
+
+    if "spotify" in command:
+        os.system("start spotify:")
+        opened.append("Spotify")
+
+    if "vs code" in command or "vscode" in command or "visual studio code" in command:
+        os.system("code")
+        opened.append("VS Code")
+
+    if opened:
+        return "Opening " + ", ".join(opened) + "."
+
+    return None
 
     return None
