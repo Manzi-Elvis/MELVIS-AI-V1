@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-MELVIS_NAME = os.getenv("MELVIS_NAME", "Melvis")
-USER_NAME = os.getenv("USER_NAME", "Elvis")
+MELVIS_NAME = os.getenv("MELVIS_NAME")
+USER_NAME = os.getenv("USER_NAME")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
+OLLAMA_URL = os.getenv("OLLAMA_URL")
